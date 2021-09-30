@@ -1,3 +1,4 @@
+import { TextField, Button, Typography } from '@mui/material'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import addDigimonsThunk from '../../store/modules/digimons/thunks'
@@ -16,13 +17,23 @@ const Search = () => {
 	return (
 		<div>
 			<div>
-				<h2>Procure seu Digimon</h2>
-				<input
+				<Typography sx={{ marginTop: 2, marginBottom: 4 }} variant='h4'>
+					Procure seu Digimon
+				</Typography>
+				<TextField
+					variant='standard'
 					placeholder='Busque'
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
 				/>
-				<button onClick={handleSearch}>Pesquisar</button>
+				<Button
+					sx={{ marginLeft: 2 }}
+					variant='contained'
+					size='small'
+					onClick={handleSearch}
+				>
+					Pesquisar
+				</Button>
 			</div>
 			{error && <span>Digimon não encontrado</span>}
 		</div>
