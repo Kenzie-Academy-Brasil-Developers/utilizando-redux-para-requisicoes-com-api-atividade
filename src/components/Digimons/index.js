@@ -1,17 +1,18 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux'
 
 const Digimons = () => {
-  const { digimons } = useSelector((state) => state);
+	const { digimons } = useSelector((state) => state)
 
-  return (
-    <div>
-      <ul>
-        {digimons.map((digimon, index) => {
-          return <li key={index}>{digimon}</li>;
-        })}
-      </ul>
-    </div>
-  );
-};
+	return (
+		<div>
+			{console.log(digimons)}
+			<ul>
+				{digimons.map((digimon, index) => {
+					return <li key={index}>{digimon}</li>
+				})}
+			</ul>
+		</div>
+	)
+}
 
-export default Digimons;
+export default Digimons
